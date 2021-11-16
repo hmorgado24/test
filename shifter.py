@@ -27,4 +27,3 @@ class Shifter():
   
   def latch(self):
     self.ping(self.latchPin)
-  
