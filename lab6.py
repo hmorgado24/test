@@ -7,13 +7,13 @@ def bug(dataPin, latchPin, clockPin):
   row = random.randint(1, 8)
   col = random.randint(0, 7)
 
-  theLEDdisplay= led(dataPin, latchPin, clockPin) 
+  leddisp = led(dataPin, latchPin, clockPin) 
 
   while True:
     Rrow = random.randint(-1, 1) 
     Rcol = random.randint(-1, 1)  
 
-    theLEDdisplay.display(row, col)
+    leddisp.display(row, col)
     time.sleep(0.1) 
 
     if (row + Rrow < 1 or row + Rrow > 7): 
