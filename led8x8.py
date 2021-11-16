@@ -17,6 +17,6 @@ class led():
     self.shifter = Shifter(data, latch, clock)
  
   def display(self, r, c):
-    self.shifter.shiftByte(led.pat[r])  
-    self.shifter.shiftByte(1 << (c-1))   
+    self.shifter.shiftByte(led.pat[c])  
+    self.shifter.shiftByte(1 << (r-1))   
       
