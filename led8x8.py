@@ -1,7 +1,7 @@
 
 from shifter import Shifter    # extend by composition
 
-class led8x8():
+class Led8x8():
 
   numbers = [ 
     0b11111110, # 0 
@@ -17,6 +17,6 @@ class led8x8():
     self.shifter = Shifter(data, latch, clock)
  
   def display(self, x, y):
-    self.shifter.shiftByte(led8x8.numbers[y])  
+    self.shifter.shiftByte(Led8x8.numbers[y])  
     self.shifter.shiftByte(1 << (x-1))   # select the given row
       
