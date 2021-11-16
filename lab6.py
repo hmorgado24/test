@@ -27,7 +27,7 @@ def bug(dataPin, latchPin, clockPin): #lighting bug "random walking" function
         else:
             y += dy #if it won't be out of bounds then you can add the change and move by one place
 
-dataPin, latchPin, clockPin = 21, 17, 26 #assign the appropriate pins for the shift registers
+dataPin, latchPin, clockPin = 21, 19, 26 #assign the appropriate pins for the shift registers
 
 p = multiprocessing.Process(target=bug, args=(dataPin, latchPin, clockPin)) #use multiprocesssing to run the bug function continuously
 p.start() #run multiprocessing 
