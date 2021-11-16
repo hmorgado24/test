@@ -1,30 +1,30 @@
 import time
 import random
-from led8x8 import Led8x8
+from led8x8 import led
 import multiprocessing
 
 def bug(dataPin, latchPin, clockPin): 
   row = random.randint(1, 8)
   col = random.randint(0, 7)
 
-  theLEDdisplay= Led8x8(dataPin, latchPin, clockPin) 
+  theLEDdisplay= led(dataPin, latchPin, clockPin) 
 
   while True:
-    dx = random.randint(-1, 1) 
-    dy = random.randint(-1, 1)  
+    Rrow = random.randint(-1, 1) 
+    Rcol = random.randint(-1, 1)  
 
     theLEDdisplay.display(row, col)
     time.sleep(0.1) 
 
-    if (row + dx < 1 or row + dx > 7): 
+    if (row + Rrow < 1 or row + Rrow > 7): 
       row = row 
     else:
-      row += dx 
+      row += Rrow 
 
-    if (col + dy < 0 or col + dy > 7): 
+    if (col + Rcol < 0 or col + Rcol > 7): 
       col = col 
     else:
-      col += dy 
+      col += Rcol 
 
 dataPin, latchPin, clockPin = 21, 19, 26 
 
